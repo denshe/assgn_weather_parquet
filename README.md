@@ -94,4 +94,15 @@ python query_parquet.py
 Outputs the answer to the question:\
     *ObservationDate:* 2016-03-17 00:00:00\
     *ScreenTemperature:* **15.8**\
-    *Region:* Highland & Eilean Siar\
+    *Region:* Highland & Eilean Siar
+    
+#### Querying parquet by SQL (via SQLite3)
+Commands are as follows (also see 'query_parquet.sqlite'):\
+```
+$ sqlite3
+sqlite> -- load library to read parquet files
+sqlite> .load ./libparquet
+sqlite> CREATE VIRTUAL TABLE weather USING parquet('weather.2016.parquet');
+sqlite> select ScreenTemperature,DATETIME(ROUND(ObservationDate / 1000), 'unixepoch'),Region from weath where ScreenTemperature = (select max(ScreenTemperature) from weather);
+```
+Output: **15.8** | 2016-03-17 00:00:00 | Highland & Eilean Siar
