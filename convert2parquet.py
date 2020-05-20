@@ -37,19 +37,6 @@ for el in d.columns:
 # get region names for rows with Country=Null
 print(d[d.Country.isnull()].groupby('Region').size())
 
-Region
-East Midlands                  1436
-Grampian                       2827
-Highland & Eilean Siar         4170
-London & South East England    2775
-North East England             2828
-North West England             4093
-Northern Ireland               5705
-Orkney & Shetland              1424
-Wales                          1267
-Yorkshire & Humber             1235
-dtype: int64
-
 # fix 'Country' for Region='London & South East England' and Region='Northern Ireland'
 # Null values in 'Country' for the rest of regions can be fixed in a similar fashion
 # comment lines below to not fix
@@ -58,4 +45,3 @@ d.loc[(d.Region=='Northern Ireland') & (d.Country.isnull()),'Country'] = 'NORTHE
 
 # save df in parquet format
 d.to_parquet('weather.2016.parquet')
-
