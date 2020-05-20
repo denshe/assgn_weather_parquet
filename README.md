@@ -91,7 +91,7 @@ pipenv sync
 pipenv shell
 python query_parquet.py
 ```
-Outputs the answer to the question:
-    *ObservationDate*         2016-03-17 00:00:00
-    *ScreenTemperature*                      15.8
-    *Region*               Highland & Eilean Siar
+Outputs the answer to the question:\
+    *ObservationDate:* 2016-03-17 00:00:00\
+    *ScreenTemperature:* **15.8**\
+    *Region:* Highland & Eilean Siar\
