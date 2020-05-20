@@ -102,7 +102,8 @@ Commands are as follows (also see 'query_parquet.sqlite'):\
 $ sqlite3
 sqlite> -- load library to read parquet files
 sqlite> .load ./libparquet
+sqlite> -- create table out of parquet file and load data to it
 sqlite> CREATE VIRTUAL TABLE weather USING parquet('weather.2016.parquet');
-sqlite> select ScreenTemperature,DATETIME(ROUND(ObservationDate / 1000), 'unixepoch'),Region from weath where ScreenTemperature = (select max(ScreenTemperature) from weather);
+sqlite> select ScreenTemperature,DATETIME(ROUND(ObservationDate / 1000), 'unixepoch'),Region from weather where ScreenTemperature = (select max(ScreenTemperature) from weather);
 ```
 Output: **15.8** | 2016-03-17 00:00:00 | Highland & Eilean Siar
