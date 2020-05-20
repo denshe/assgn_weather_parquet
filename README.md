@@ -82,7 +82,6 @@ dtype: int64
 
 # lastly, dataframe converted to parquet and saved as 'weather.2016.parquet'
 ```
-
 Among the other issues found in the data is the value -99.0 in "ScreenTemperature" (most frequent value in this column). As "ScreenTemperature" columns contains degrees in Celsius, it seems '-99.0' represents the cases when a temperature value is not available for an observation (i.e., null value).
 
 #### Querying parquet by pandas
@@ -92,7 +91,7 @@ pipenv sync
 pipenv shell
 python query_parquet.py
 ```
-
-```
-Output of query_parquet.py
-==========================
+Outputs the answer to the question:
+    *ObservationDate*         2016-03-17 00:00:00
+    *ScreenTemperature*                      15.8
+    *Region*               Highland & Eilean Siar
