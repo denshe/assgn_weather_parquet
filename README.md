@@ -92,9 +92,9 @@ pipenv shell
 python query_parquet.py
 ```
 ##### Output (answer to the question):
-    *ObservationDate:* 2016-03-17 00:00:00\
-    *ScreenTemperature:* **15.8**\
-    *Region:* Highland & Eilean Siar
+*ObservationDate:* 2016-03-17 00:00:00\
+*ScreenTemperature:* **15.8**\
+*Region:* Highland & Eilean Siar
     
 #### Querying parquet by SQL (via SQLite3)
 Commands are as follows (also see 'query_parquet.sqlite'):\
